@@ -10,7 +10,7 @@ module PagerDuty
     describe "/escalation_policies" do
       it "returns escalation_policies for account" do
         VCR.use_cassette("escalation_policies/index.no_query") do
-          policies = TESTCLIENT.escalation_policies()
+          policies = @client.escalation_policies()
           assert_equal 5, policies.count
           assert_equal ["Default", "Devs Only", "Engineering Escalation Policy", "Policy Name", "TEST CREATE"], policies.map { |policy| policy[:name] }
         end
@@ -18,14 +18,14 @@ module PagerDuty
 
       it "returns escalation_policies for account filtered by query" do
         VCR.use_cassette("escalation_policies/index.query") do
-          policies = TESTCLIENT.escalation_policies(query: "Policy")
+          policies = @client.escalation_policies(query: "Policy")
           assert_equal 2, policies.count
         end
       end 
 
       it "returns escalation_policies for account sorted by name asc" do
         VCR.use_cassette("escalation_policies/index.name_asc") do
-          policies = TESTCLIENT.escalation_policies(sort_by: "name:asc")
+          policies = @client.escalation_policies(sort_by: "name:asc")
           assert_equal 5, policies.count
           assert_equal ["Default", "Devs Only", "Engineering Escalation Policy", "Policy Name", "TEST CREATE"], policies.map { |policy| policy[:name] }
         end
@@ -33,7 +33,7 @@ module PagerDuty
 
       it "returns escalation_policies for account sorted by name desc" do
         VCR.use_cassette("escalation_policies/index.name_desc") do
-          policies = TESTCLIENT.escalation_policies(sort_by: "name:desc")
+          policies = @client.escalation_policies(sort_by: "name:desc")
           assert_equal 5, policies.count
           assert_equal ["TEST CREATE", "Policy Name", "Engineering Escalation Policy", "Devs Only", "Default"], policies.map { |policy| policy[:name] }
         end
@@ -41,7 +41,7 @@ module PagerDuty
 
       it "returns escalation_policies for account including services" do
         VCR.use_cassette("escalation_policies/index.include_services") do
-          policies = TESTCLIENT.escalation_policies(include: ["services"])
+          policies = @client.escalation_policies(include: ["services"])
           assert_equal 5, policies.count
           assert_equal ["P7WQ2DJ"], policies.map { |policy| 
             policy[:services].first[:id] unless policy[:services] == []
@@ -51,7 +51,7 @@ module PagerDuty
 
       it "returns escalation_policies for account including services and teams" do
         VCR.use_cassette("escalation_policies/index.include_services_teams") do
-          policies = TESTCLIENT.escalation_policies(include: ["services", "teams"])
+          policies = @client.escalation_policies(include: ["services", "teams"])
           assert_equal 5, policies.count
           assert_equal ["P7WQ2DJ"], policies.map { |policy| 
             policy[:services].first[:id] unless policy[:services] == []
@@ -65,7 +65,7 @@ module PagerDuty
 
       it "returns escalation_policies for account including services teams and targets" do
         VCR.use_cassette("escalation_policies/index.include_services_teams_targets") do
-          policies = TESTCLIENT.escalation_policies(include: ["services", "teams", "targets"])
+          policies = @client.escalation_policies(include: ["services", "teams", "targets"])
           assert_equal 5, policies.count
           assert_equal ["P7WQ2DJ"], policies.map { |policy| 
             policy[:services].first[:id] unless policy[:services] == []
@@ -79,42 +79,42 @@ module PagerDuty
 
       it "returns escalation_policies for account filtered by user_id when user has nothing" do
         VCR.use_cassette("escalation_policies/index.user_id_nothing") do
-          policies = TESTCLIENT.escalation_policies(user_ids: ["PDU9IB6"])
+          policies = @client.escalation_policies(user_ids: ["PDU9IB6"])
           assert_equal 0, policies.count
         end
       end  
 
       it "returns escalation_policies for account filtered by user_id when user has one" do
         VCR.use_cassette("escalation_policies/index.user_id_has_one") do
-          policies = TESTCLIENT.escalation_policies(user_ids: ["PGJLPE9"])
+          policies = @client.escalation_policies(user_ids: ["PGJLPE9"])
           assert_equal 1, policies.count
         end
       end 
 
       it "returns escalation_policies for account filtered by user_id when user has five" do
         VCR.use_cassette("escalation_policies/index.user_id_has_five") do
-          policies = TESTCLIENT.escalation_policies(user_ids: ["PRTFS0C"])
+          policies = @client.escalation_policies(user_ids: ["PRTFS0C"])
           assert_equal 5, policies.count
         end
       end  
 
       it "returns escalation_policies for account filtered by user_id when user has two" do
         VCR.use_cassette("escalation_policies/index.user_id_has_four") do
-          policies = TESTCLIENT.escalation_policies(user_ids: ["PW21NA6"])
+          policies = @client.escalation_policies(user_ids: ["PW21NA6"])
           assert_equal 4, policies.count
         end
       end   
 
       it "returns escalation_policies for account filtered by multiple user_id" do
         VCR.use_cassette("escalation_policies/index.multiple_user_ids") do
-          policies = TESTCLIENT.escalation_policies(user_ids: ["PW21NA6", "PRTFS0C"])
+          policies = @client.escalation_policies(user_ids: ["PW21NA6", "PRTFS0C"])
           assert_equal 4, policies.count
         end
       end   
 
       it "returns escalation_policies for account filtered by team ids" do
         VCR.use_cassette("escalation_policies/index.team_ids") do
-          policies = TESTCLIENT.escalation_policies(team_ids: ["P7XILUG"])
+          policies = @client.escalation_policies(team_ids: ["P7XILUG"])
           assert_equal 2, policies.count
         end
       end   
@@ -123,7 +123,7 @@ module PagerDuty
     describe "/escalation_policies GET" do
       it "will get an escalation_policies by id" do
         VCR.use_cassette("escalation_policies/get_by_id") do
-          policy = TESTCLIENT.escalation_policy("P1N7VS5")
+          policy = @client.escalation_policy("P1N7VS5")
           assert_equal "P1N7VS5", policy[:id] 
           assert_equal "Default", policy[:name]
         end
@@ -132,7 +132,7 @@ module PagerDuty
       it "won't get a deleted escalation_policies by id" do
         VCR.use_cassette("escalation_policies/get_deleted") do
           assert_raises(PagerDuty::NotFound) do
-            TESTCLIENT.escalation_policy("P8LF8XV")
+            @client.escalation_policy("P8LF8XV")
           end
         end
       end      
@@ -149,10 +149,10 @@ module PagerDuty
 
       it "will delete an addon with an id" do
         VCR.use_cassette("escalation_policies/delete.P09984M.allowed") do
-          existing = TESTCLIENT.escalation_policy("P2JEHJE")
-          assert TESTCLIENT.delete_escalation_policy("P2JEHJE")
+          existing = @client.escalation_policy("P2JEHJE")
+          assert @client.delete_escalation_policy("P2JEHJE")
           assert_raises(PagerDuty::NotFound) do
-            find_again = TESTCLIENT.escalation_policy("P2JEHJE")
+            find_again = @client.escalation_policy("P2JEHJE")
           end
         end
       end
@@ -162,7 +162,7 @@ module PagerDuty
       it "will not create an escalation_policy without escalation rules targets" do
         VCR.use_cassette("escalation_policies/create.no_escalation_rule_targets") do
           assert_raises(PagerDuty::BadRequest) do
-            TESTCLIENT.create_escalation_policy("TEST", [{escalation_delay_in_minutes: 10}])
+            @client.create_escalation_policy("TEST", [{escalation_delay_in_minutes: 10}])
           end
         end
       end 
@@ -193,7 +193,7 @@ module PagerDuty
               type: "team"
             }]
 
-            policy = TESTCLIENT.create_escalation_policy(name,
+            policy = @client.create_escalation_policy(name,
                                                          escalation_rules,
                                                          repeat_enabled: false,
                                                          services: services,
@@ -231,7 +231,7 @@ module PagerDuty
             type: "team"
           }]
 
-          policy = TESTCLIENT.create_escalation_policy(name,
+          policy = @client.create_escalation_policy(name,
                                                        escalation_rules,
                                                        repeat_enabled: false,
                                                        services: services,
@@ -250,8 +250,8 @@ module PagerDuty
     describe "/escalation_policies PUT" do
       it "will not update an escalation_policy without changing anything" do
         VCR.use_cassette("escalation_policies/update.no_name") do
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5")
+          existing = @client.escalation_policy("P1N7VS5")
+          response = @client.update_escalation_policy("P1N7VS5")
 
           existing_first = existing[:escalation_rules].first
           response_first = response[:escalation_rules].first
@@ -273,9 +273,9 @@ module PagerDuty
 
       it "will update an escalation_policy name" do
         VCR.use_cassette("escalation_policies/update.name_only") do
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
+          existing = @client.escalation_policy("P1N7VS5")
           assert_equal existing[:name], "Default"
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5", name: "Default Changed")          
+          response = @client.update_escalation_policy("P1N7VS5", name: "Default Changed")          
           assert_equal response[:name], "Default Changed"
 
           existing_first = existing[:escalation_rules].first
@@ -297,9 +297,9 @@ module PagerDuty
 
       it "will update an escalation_policy description" do
         VCR.use_cassette("escalation_policies/update.description_only") do
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
+          existing = @client.escalation_policy("P1N7VS5")
           assert_equal "Summary Value", existing[:description]
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5", description: "Description Value")
+          response = @client.update_escalation_policy("P1N7VS5", description: "Description Value")
           assert_equal "Description Value", response[:description]
 
           existing_first = existing[:escalation_rules].first
@@ -320,9 +320,9 @@ module PagerDuty
 
       it "will update an escalation_policy num_loops" do
         VCR.use_cassette("escalation_policies/update.num_loops_only") do
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
+          existing = @client.escalation_policy("P1N7VS5")
           assert_equal 0, existing[:num_loops]
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5", num_loops: 5)
+          response = @client.update_escalation_policy("P1N7VS5", num_loops: 5)
           assert_equal 5, response[:num_loops]
 
           existing_first = existing[:escalation_rules].first
@@ -356,8 +356,8 @@ module PagerDuty
             }
           ]
 
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5", escalation_rules: escalation_rules)
+          existing = @client.escalation_policy("P1N7VS5")
+          response = @client.update_escalation_policy("P1N7VS5", escalation_rules: escalation_rules)
 
           existing_first = existing[:escalation_rules].first
           response_first = response[:escalation_rules].first
@@ -390,8 +390,8 @@ module PagerDuty
             }
           ]
 
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5", escalation_rules: escalation_rules)
+          existing = @client.escalation_policy("P1N7VS5")
+          response = @client.update_escalation_policy("P1N7VS5", escalation_rules: escalation_rules)
 
           pp response
 
@@ -418,8 +418,8 @@ module PagerDuty
             type: "team"
           }]
 
-          existing = TESTCLIENT.escalation_policy("P1N7VS5")
-          response = TESTCLIENT.update_escalation_policy("P1N7VS5", teams: teams)
+          existing = @client.escalation_policy("P1N7VS5")
+          response = @client.update_escalation_policy("P1N7VS5", teams: teams)
 
           response_team = response[:teams].first
 
