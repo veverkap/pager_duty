@@ -10,8 +10,6 @@ VCR.configure do |config|
   config.hook_into :webmock
 end
 
-TESTCLIENT = PagerDuty::Client.new(api_token: "iFBafMkV8noXmHd6jmsi")
-
 def test_api_token
   ENV.fetch 'TEST_API_TOKEN', 'x' * 40
 end
