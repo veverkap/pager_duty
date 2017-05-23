@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/escalation_policies/P2JEHJE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 22 May 2017 20:29:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"aba6e8277bbed0725e3845f775c86836"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - de9895f3b37ad1480d37a1f4409dc041
+    body:
+      encoding: ASCII-8BIT
+      string: '{"escalation_policy":{"id":"P2JEHJE","type":"escalation_policy","summary":"TO
+        BE DELETED","self":"https://api.pagerduty.com/escalation_policies/P2JEHJE","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P2JEHJE","name":"TO
+        BE DELETED","escalation_rules":[{"id":"PVVHWP6","escalation_delay_in_minutes":30,"targets":[{"id":"PQLNQ9T","type":"schedule_reference","summary":"New
+        Schedule #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T"}]}],"services":[],"num_loops":0,"teams":[{"id":"P7XILUG","type":"team_reference","summary":"Devs","self":"https://api.pagerduty.com/teams/P7XILUG","html_url":"https://push-comedy-theater.pagerduty.com/teams/P7XILUG"}],"description":"","privilege":null}}'
+    http_version: 
+  recorded_at: Mon, 22 May 2017 20:29:03 GMT
+- request:
+    method: delete
+    uri: https://api.pagerduty.com/escalation_policies/P2JEHJE
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 22 May 2017 20:29:03 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 787f7d5c7ef485a01f0eeb4eab5c2a2b
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 22 May 2017 20:29:03 GMT
+- request:
+    method: get
+    uri: https://api.pagerduty.com/escalation_policies/P2JEHJE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 22 May 2017 20:29:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 404 Not Found
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6031e3dedc9c92e2081db42b2912d9dd
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"message":"Escalation Policy Not Found","code":5001}}'
+    http_version: 
+  recorded_at: Mon, 22 May 2017 20:29:04 GMT
+recorded_with: VCR 3.0.3

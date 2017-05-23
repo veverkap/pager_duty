@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/abilities
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 19 May 2017 14:02:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"0da61ef0d8a5571c22d819a5ed89665e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5f125e02489796ac002cf0f7a321fe88
+    body:
+      encoding: ASCII-8BIT
+      string: '{"abilities":["sso","advanced_reports","teams","read_only_users","team_responders","service_support_hours","urgencies","manage_schedules","manage_api_keys","coordinated_responding","event_rules","beta_custom_actions","coordinated_responding_preview","preview_incident_alert_split","permissions_service","on_call_selfie","features_in_use_preventing_downgrade_to","feature_to_plan_map"]}'
+    http_version: 
+  recorded_at: Fri, 19 May 2017 14:02:43 GMT
+recorded_with: VCR 3.0.3

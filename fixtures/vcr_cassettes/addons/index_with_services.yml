@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/addons?include%5B%5D=services
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 19 May 2017 15:12:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"5ea2941e3cb6d8187affaf19f0c1d88b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0bea2336c74c8ac75e7465df251943ef
+    body:
+      encoding: ASCII-8BIT
+      string: '{"addons":[{"id":"P58BJWA","type":"full_page_addon","summary":"Full
+        Page Addon","self":"https://api.pagerduty.com/addons/P58BJWA","html_url":null,"name":"Full
+        Page Addon","src":"https://intranet.example.com/status","services":[]},{"id":"PE3MKYN","type":"incident_show_addon","summary":"Incident
+        Addon","self":"https://api.pagerduty.com/addons/PE3MKYN","html_url":null,"name":"Incident
+        Addon","src":"https://intranet.example.com","services":[{"id":"P407C9R","name":"test
+        service","description":null,"auto_resolve_timeout":14400,"acknowledgement_timeout":1800,"created_at":"2017-05-10T19:48:13-04:00","status":"active","last_incident_timestamp":"2017-05-13T22:01:58-04:00","teams":[],"incident_urgency_rule":{"type":"constant","urgency":"high"},"scheduled_actions":[],"support_hours":null,"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy_reference","summary":"Default","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5"},"addons":[{"id":"PE3MKYN","type":"incident_show_addon_reference","summary":"Incident
+        Addon","self":"https://api.pagerduty.com/addons/PE3MKYN","html_url":null}],"privilege":null,"alert_creation":"create_alerts_and_incidents","integrations":[{"id":"PD1VEX7","type":"events_api_v2_inbound_integration_reference","summary":"API","self":"https://api.pagerduty.com/services/P407C9R/integrations/PD1VEX7","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R/integrations/PD1VEX7"}],"type":"service","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}]}],"limit":25,"offset":0,"more":false,"total":null}'
+    http_version: 
+  recorded_at: Fri, 19 May 2017 15:12:04 GMT
+recorded_with: VCR 3.0.3

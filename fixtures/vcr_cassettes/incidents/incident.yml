@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/incidents/14
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 23 May 2017 14:05:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"fad9cf85d31f671db3e341a7b082dcc2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ac7ac23465590470326e097e785392dd
+    body:
+      encoding: ASCII-8BIT
+      string: '{"incident":{"incident_number":14,"title":"BLAH","description":"BLAH","created_at":"2017-05-14T02:01:58Z","status":"resolved","pending_actions":[],"incident_key":"a4abde2e49784344855ff4f8f1f59b16","service":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"assignments":[],"acknowledgements":[],"last_status_change_at":"2017-05-14T06:01:58Z","last_status_change_by":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"first_trigger_log_entry":{"id":"R57NYJVUGNN5CGHQIXF2K45J7X","type":"trigger_log_entry_reference","summary":"Triggered
+        through the website","self":"https://api.pagerduty.com/log_entries/R57NYJVUGNN5CGHQIXF2K45J7X","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PLK5EK9/log_entries/R57NYJVUGNN5CGHQIXF2K45J7X"},"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy_reference","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5"},"privilege":null,"teams":[],"alert_counts":{"all":0,"triggered":0,"resolved":0},"impacted_services":[{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"is_mergeable":true,"importance":null,"resolve_reason":null,"incidents_responders":[],"responder_requests":[],"subscriber_requests":[],"urgency":"high","id":"PLK5EK9","type":"incident","summary":"[#14]
+        BLAH","self":"https://api.pagerduty.com/incidents/PLK5EK9","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PLK5EK9"}}'
+    http_version: 
+  recorded_at: Tue, 23 May 2017 14:05:48 GMT
+- request:
+    method: get
+    uri: https://api.pagerduty.com/incidents/PLK5EK9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 23 May 2017 14:05:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"fad9cf85d31f671db3e341a7b082dcc2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f3132694ff43aad99478bae483ddb1d9
+    body:
+      encoding: ASCII-8BIT
+      string: '{"incident":{"incident_number":14,"title":"BLAH","description":"BLAH","created_at":"2017-05-14T02:01:58Z","status":"resolved","pending_actions":[],"incident_key":"a4abde2e49784344855ff4f8f1f59b16","service":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"assignments":[],"acknowledgements":[],"last_status_change_at":"2017-05-14T06:01:58Z","last_status_change_by":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"first_trigger_log_entry":{"id":"R57NYJVUGNN5CGHQIXF2K45J7X","type":"trigger_log_entry_reference","summary":"Triggered
+        through the website","self":"https://api.pagerduty.com/log_entries/R57NYJVUGNN5CGHQIXF2K45J7X","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PLK5EK9/log_entries/R57NYJVUGNN5CGHQIXF2K45J7X"},"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy_reference","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5"},"privilege":null,"teams":[],"alert_counts":{"all":0,"triggered":0,"resolved":0},"impacted_services":[{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"is_mergeable":true,"importance":null,"resolve_reason":null,"incidents_responders":[],"responder_requests":[],"subscriber_requests":[],"urgency":"high","id":"PLK5EK9","type":"incident","summary":"[#14]
+        BLAH","self":"https://api.pagerduty.com/incidents/PLK5EK9","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PLK5EK9"}}'
+    http_version: 
+  recorded_at: Tue, 23 May 2017 14:05:48 GMT
+recorded_with: VCR 3.0.3

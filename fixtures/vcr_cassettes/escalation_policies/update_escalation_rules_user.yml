@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/escalation_policies/P1N7VS5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 22 May 2017 23:31:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"ff0b856c10d83b4994bbe4ad37b0fbc6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a7dc9602ca17b8adccd4f75be1c54cd8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5","name":"Default
+        Changed","escalation_rules":[{"id":"PCCBSXM","escalation_delay_in_minutes":20,"targets":[{"id":"PQLNQ9T","type":"schedule_reference","summary":"New
+        Schedule #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T"}]}],"services":[{"id":"P7WQ2DJ","type":"service_reference","summary":"API
+        Service","self":"https://api.pagerduty.com/services/P7WQ2DJ","html_url":"https://push-comedy-theater.pagerduty.com/services/P7WQ2DJ"},{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"num_loops":5,"teams":[{"id":"P7XILUG","type":"team_reference","summary":"Devs","self":"https://api.pagerduty.com/teams/P7XILUG","html_url":"https://push-comedy-theater.pagerduty.com/teams/P7XILUG"}],"description":"Description
+        Value","privilege":null}}'
+    http_version: 
+  recorded_at: Mon, 22 May 2017 23:31:55 GMT
+- request:
+    method: put
+    uri: https://api.pagerduty.com/escalation_policies/P1N7VS5
+    body:
+      encoding: UTF-8
+      string: '{"escalation_rules":[{"escalation_delay_in_minutes":20,"targets":[{"id":"PDU9IB6","type":"user"}]}],"escalation_policy":{"type":"escalation_policy","escalation_rules":[{"escalation_delay_in_minutes":20,"targets":[{"id":"PDU9IB6","type":"user"}]}]}}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 22 May 2017 23:31:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"0240cb0616541b5d731cb01422c3c289"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05c609482a1ea6ec98f8f398de833556
+    body:
+      encoding: ASCII-8BIT
+      string: '{"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5","name":"Default
+        Changed","escalation_rules":[{"id":"PA6NNM1","escalation_delay_in_minutes":20,"targets":[{"id":"PDU9IB6","type":"user_reference","summary":"Fake
+        User","self":"https://api.pagerduty.com/users/PDU9IB6","html_url":"https://push-comedy-theater.pagerduty.com/users/PDU9IB6"}]}],"services":[{"id":"P7WQ2DJ","type":"service_reference","summary":"API
+        Service","self":"https://api.pagerduty.com/services/P7WQ2DJ","html_url":"https://push-comedy-theater.pagerduty.com/services/P7WQ2DJ"},{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"num_loops":5,"teams":[{"id":"P7XILUG","type":"team_reference","summary":"Devs","self":"https://api.pagerduty.com/teams/P7XILUG","html_url":"https://push-comedy-theater.pagerduty.com/teams/P7XILUG"}],"description":"Description
+        Value","privilege":null}}'
+    http_version: 
+  recorded_at: Mon, 22 May 2017 23:31:56 GMT
+recorded_with: VCR 3.0.3
