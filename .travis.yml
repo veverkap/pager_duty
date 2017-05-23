@@ -1,5 +1,18 @@
-sudo: false
 language: ruby
+
 rvm:
-  - 2.4.1
-before_install: gem install bundler -v 1.14.6
+  - 2.3.3
+  - 2.4.0
+
+notifications:
+  email:
+    recipients:
+      - patrick.veverka@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always  
+
+sudo: false
+
+env:
+  global:
+    - TEST_API_TOKEN="y_NbAkKc66ryYTWUXYEu"

@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/escalation_policies?include%5B%5D=services&include%5B%5D=teams
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="y_NbAkKc66ryYTWUXYEu"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 22 May 2017 19:52:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"49a3079b1b2c1fcd10d56f39288be7fd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9330449fdc085ab2edd4c3f49578f6a7
+    body:
+      encoding: ASCII-8BIT
+      string: '{"escalation_policies":[{"id":"P1N7VS5","type":"escalation_policy","summary":"Default","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5","name":"Default","escalation_rules":[{"id":"P4UXIE2","escalation_delay_in_minutes":30,"targets":[{"id":"PQLNQ9T","type":"schedule_reference","summary":"New
+        Schedule #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T"}]}],"services":[{"id":"P7WQ2DJ","type":"service_reference","summary":"API
+        Service","self":"https://api.pagerduty.com/services/P7WQ2DJ","html_url":"https://push-comedy-theater.pagerduty.com/services/P7WQ2DJ"},{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"num_loops":0,"teams":[{"id":"P7XILUG","type":"team_reference","summary":"Devs","self":"https://api.pagerduty.com/teams/P7XILUG","html_url":"https://push-comedy-theater.pagerduty.com/teams/P7XILUG"}],"description":"","privilege":null},{"id":"P9ZL21C","type":"escalation_policy","summary":"Devs
+        Only","self":"https://api.pagerduty.com/escalation_policies/P9ZL21C","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P9ZL21C","name":"Devs
+        Only","escalation_rules":[{"id":"P41IVJB","escalation_delay_in_minutes":30,"targets":[{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"},{"id":"PQLNQ9T","type":"schedule_reference","summary":"New
+        Schedule #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T"}]}],"services":[],"num_loops":0,"teams":[{"id":"P7XILUG","type":"team_reference","summary":"Devs","self":"https://api.pagerduty.com/teams/P7XILUG","html_url":"https://push-comedy-theater.pagerduty.com/teams/P7XILUG"}],"description":"Test","privilege":null},{"id":"PT057MH","type":"escalation_policy","summary":"Engineering
+        Escalation Policy","self":"https://api.pagerduty.com/escalation_policies/PT057MH","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/PT057MH","name":"Engineering
+        Escalation Policy","escalation_rules":[{"id":"PRB87F1","escalation_delay_in_minutes":10,"targets":[{"id":"PQLNQ9T","type":"schedule_reference","summary":"New
+        Schedule #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T"}]}],"services":[],"num_loops":0,"teams":[],"description":"","privilege":null},{"id":"PTAEK1P","type":"escalation_policy","summary":"Policy
+        Name","self":"https://api.pagerduty.com/escalation_policies/PTAEK1P","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/PTAEK1P","name":"Policy
+        Name","escalation_rules":[{"id":"PLH20NA","escalation_delay_in_minutes":30,"targets":[{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"}]},{"id":"PAM4L6X","escalation_delay_in_minutes":30,"targets":[{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"}]}],"services":[],"num_loops":1,"teams":[],"description":"","privilege":null},{"id":"PY7I9YV","type":"escalation_policy","summary":"TEST
+        CREATE","self":"https://api.pagerduty.com/escalation_policies/PY7I9YV","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/PY7I9YV","name":"TEST
+        CREATE","escalation_rules":[{"id":"PZ9PPDU","escalation_delay_in_minutes":30,"targets":[{"id":"PQLNQ9T","type":"schedule_reference","summary":"New
+        Schedule #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T"}]}],"services":[],"num_loops":0,"teams":[],"description":"Here
+        is the ep for the engineering team.","privilege":null}],"limit":25,"offset":0,"more":false,"total":null}'
+    http_version: 
+  recorded_at: Mon, 22 May 2017 19:52:04 GMT
+recorded_with: VCR 3.0.3
