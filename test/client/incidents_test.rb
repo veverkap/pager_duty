@@ -212,5 +212,67 @@ module PagerDuty
         end
       end      
     end
+
+    describe "/incident_alerts GET" do
+      it "returns incident_alerts for incident" do
+        VCR.use_cassette("incidents/incident_alerts/P6M04C7") do
+          alert = @client.incident_alerts("P6M04C7")
+          assert_equal 1, alert.count
+        end
+      end  
+
+      it "returns incident_alerts for incident status resolved" do
+        VCR.use_cassette("incidents/incident_alerts/status_resolved") do
+          alert = @client.incident_alerts("P6M04C7", statuses: :resolved)
+          assert_equal 1, alert.count
+        end
+      end
+
+      it "returns incident_alerts for incident with alerty key" do
+        VCR.use_cassette("incidents/incident_alerts/alert_key") do
+          alert = @client.incident_alerts("P6M04C7", alert_key: "acecf47ae60b490aa7a1bc6629a1749e")
+          assert_equal 1, alert.count
+        end
+      end
+    end 
+
+    describe "/incident_log_entries GET" do
+      it "returns incident_log_entries for incident" do
+        VCR.use_cassette("incidents/incident_log_entries/P6M04C7") do
+          log_entries = @client.incident_log_entries("P6M04C7")
+          assert_equal 8, log_entries.count
+        end
+      end  
+
+      it "returns incident_log_entries for incident with is_overview" do
+        VCR.use_cassette("incidents/incident_log_entries/P6M04C7.is_overview") do
+          log_entries = @client.incident_log_entries("P6M04C7", is_overview: true)
+          assert_equal 3, log_entries.count
+        end
+      end        
+
+      it "returns incident_log_entries for incident with is_overview" do
+        VCR.use_cassette("incidents/incident_log_entries/P6M04C7.include") do
+          log_entries = @client.incident_log_entries("P6M04C7", include: ["services", "channels"])
+          assert_equal 8, log_entries.count
+        end
+      end   
+    end        
+
+    describe "/incident_notes GET" do
+      it "returns incident_notes for incident with notes" do
+        VCR.use_cassette("incidents/incident_notes/P9XCW88") do
+          notes = @client.incident_notes("P9XCW88")
+          assert_equal 1, notes.count
+        end
+      end  
+
+      it "doesnt return incident_notes for incident with no notes" do
+        VCR.use_cassette("incidents/incident_notes/P6M04C7") do
+          notes = @client.incident_notes("P6M04C7")
+          assert_equal 0, notes.count
+        end
+      end          
+    end            
   end
 end

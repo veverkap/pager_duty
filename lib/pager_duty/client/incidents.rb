@@ -18,7 +18,6 @@ module PagerDuty
       # @option options [String] :time_zone Time zone in which dates in the result will be rendered.
       # @option options [String] :sort_by Used to specify both the field you wish to sort the results on (incident_number/created_at/resolved_at/urgency), as well as the direction (asc/desc) of the results. The sort_by field and direction should be separated by a colon. A maximum of two fields can be included, separated by a comma. Sort direction defaults to <tt>ascending</tt>. NOTE: The account must have the <tt>`urgencies`</tt> ability to sort by the urgency.
       # @option options [Array<String>] :include Array of additional details to include. (One or more of <tt>users</tt>, <tt>services</tt>, <tt>first_trigger_log_entries</tt>, <tt>escalation_policies</tt>, <tt>teams</tt>, <tt>assignees</tt>, <tt>acknowledgers</tt>)
-      # 
       # @return [Array<Sawyer::Resource>] An array of hashes representing incidents
       # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents
       def incidents(options = {})
@@ -54,7 +53,6 @@ module PagerDuty
       # 
       # @param id [String] An incident id, or an incident number
       # @param options [Sawyer::Resource] A customizable set of options.
-      # 
       # @return [Sawyer::Resource] A hash representing incident
       # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents_id
       def incident(id, options = {})
@@ -65,22 +63,67 @@ module PagerDuty
 
       # List alerts for the specified incident.
       # /incidents/{id}/alerts
-      def get_alerts_incidents()
-      end      
+      # @param incident_id [String] Incident ID
+      # @param options [Sawyer::Resource] A customizable set of options.
+      # @option options [Array<String>] :statuses Return only incidents with the given statuses (one or more of <tt>triggered</tt> or <tt>resolved</tt>. (More status codes may be introduced in the future.)
+      # @option options [String] :alert_key Alert de-duplication key.
+      # @option options [String] :sort_by Used to specify both the field you wish to sort the results on (created_at/resolved_at), as well as the direction (asc/desc) of the results. The sort_by field and direction should be separated by a colon. A maximum of two fields can be included, separated by a comma. Sort direction defaults to ascending.  (One of <tt>`created_at`</tt> or <tt>`resolved_at`</tt> with <tt>`asc`</tt> or <tt>`desc`</tt>
+      # @option options [Array<String>] :include Array of additional details to include. (One or more of <tt>services</tt>, <tt>first_trigger_log_entries</tt>, <tt>incidents</tt>)
+      # 
+      # @return [Array<Sawyer::Resource>] An array of hashes representing alerts
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents_id_alerts
+      def incident_alerts(incident_id, options = {})
+        query_params = Hash.new
+        query_params[:statuses] = options.fetch(:statuses, [])
+        query_params[:alert_key] = options[:alert_key] if options[:alert_key]
+        query_params[:sort_by]   = options[:sort_by] if options[:sort_by]
+        response = get "/incidents/#{incident_id}/alerts", options.merge({query: query_params})
+        response[:alerts]        
+      end 
+      alias :get_alerts_for_incident :incident_alerts     
 
       # Show detailed information about an alert. Accepts an alert id.
       # /incidents/{id}/alerts/{alert_id}/
-      def get_incident_alert(id, alert_id)
+      # @param incident_id [String] Incident ID
+      # @param alert_id [String] Alert ID
+      # @param options [Sawyer::Resource] A customizable set of options.
+      # 
+      # @return [Sawyer::Resource] A hash representing alerts
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents_id_alerts_alert_id
+      def incident_alert(incident_id, alert_id, options = {})
+        response = get "/incidents/{incident_id}/alerts/{alert_id}", options
+        response[:alert]         
       end
+      alias :get_incident_alert :incident_alert
 
       # List log entries for the specified incident.
-      # /incidents/{id}/log_entries
-      def get_incidents_log_entries(id)
+      # /incidents/{incident_id}/log_entries
+      # @param options [Sawyer::Resource] A customizable set of options
+      # @option options [String] :time_zone Time zone to display log entries
+      # @option options [Boolean] :is_overview If true, will return a subset of log entries that show only the most important changes to the incident.
+      # @option options [Array<String>] :include Array of additional details to include. (One or more of <tt>incidents</tt>, <tt>services</tt>, <tt>channels</tt>, <tt>teams</tt>
+      # @return [Array<Sawyer::Resource>] An array of hashes representing log entries
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents_id_log_entries
+      def incident_log_entries(incident_id, options = {})
+        query_params = Hash.new
+        query_params[:time_zone]    = options[:time_zone] if options[:time_zone]
+        query_params[:is_overview]  = options[:is_overview] if options[:is_overview]
+        query_params[:include]      = options[:include] if options[:include]
+
+        response = get "/incidents/#{incident_id}/log_entries", options.merge({query: query_params})
+        response[:log_entries]                
       end
 
       # List existing notes for the specified incident.
       # /incidents/{id}/notes
-      def get_incidents_notes(id)
+      # @param incident_id [String] Incident id
+      # @param options [Sawyer::Resource] A customizable set of options
+      # 
+      # @return [Sawyer::Resource> A hash representing notes
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents_id_notes
+      def incident_notes(incident_id, options = {})
+        response = get "/incidents/#{incident_id}/notes", options
+        response[:notes]          
       end
 
       # # Acknowledge, resolve, escalate or reassign one or more incidents.
