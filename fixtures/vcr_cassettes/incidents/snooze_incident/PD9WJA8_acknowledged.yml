@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagerduty.com/incidents/PD9WJA8/snooze?duration=3600
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="FAKETOKEN"
+      From:
+      - pagerduty@veverka.net
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 24 May 2017 02:08:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"c356ac282b68ffc2b098fa04297bb4b8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 931dacb64b2138caeb981705446b8c5b
+    body:
+      encoding: UTF-8
+      string: '{"incident":{"incident_number":19,"title":"Snooze Me","description":"Snooze
+        Me","created_at":"2017-05-24T02:03:43Z","status":"acknowledged","pending_actions":[{"type":"unacknowledge","at":"2017-05-24T03:08:57Z"},{"type":"resolve","at":"2017-05-24T07:08:57Z"}],"incident_key":"c4cda4e2e7b4425986622b1cec07a288","service":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"assignments":[{"at":"2017-05-24T02:08:27Z","assignee":{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"}}],"acknowledgements":[{"at":"2017-05-24T02:08:27Z","acknowledger":{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"}}],"last_status_change_at":"2017-05-24T02:08:27Z","last_status_change_by":{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"},"first_trigger_log_entry":{"id":"ROLCR3AAIXJ6ZGDT3ZEKTARL7A","type":"trigger_log_entry_reference","summary":"Triggered
+        through the website","self":"https://api.pagerduty.com/log_entries/ROLCR3AAIXJ6ZGDT3ZEKTARL7A","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PD9WJA8/log_entries/ROLCR3AAIXJ6ZGDT3ZEKTARL7A"},"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy_reference","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5"},"privilege":null,"teams":[{"id":"P1HE60B","type":"team_reference","summary":"Ops","self":"https://api.pagerduty.com/teams/P1HE60B","html_url":"https://push-comedy-theater.pagerduty.com/teams/P1HE60B"}],"alert_counts":{"all":0,"triggered":0,"resolved":0},"impacted_services":[{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"is_mergeable":true,"importance":null,"incidents_responders":[],"responder_requests":[],"subscriber_requests":[],"urgency":"high","id":"PD9WJA8","type":"incident","summary":"[#19]
+        Snooze Me","self":"https://api.pagerduty.com/incidents/PD9WJA8","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PD9WJA8"}}'
+    http_version: 
+  recorded_at: Wed, 24 May 2017 02:08:57 GMT
+recorded_with: VCR 3.0.3

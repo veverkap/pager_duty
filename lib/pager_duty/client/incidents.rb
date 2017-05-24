@@ -119,43 +119,103 @@ module PagerDuty
       # @param incident_id [String] Incident id
       # @param options [Sawyer::Resource] A customizable set of options
       # 
-      # @return [Sawyer::Resource> A hash representing notes
+      # @return [Sawyer::Resource] A hash representing notes
       # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/get_incidents_id_notes
       def incident_notes(incident_id, options = {})
         response = get "/incidents/#{incident_id}/notes", options
         response[:notes]          
       end
 
-      # # Acknowledge, resolve, escalate or reassign one or more incidents.
-      # # /incidents
-      # def put_incidents()
-      # end
+      # Snooze an incident.
+      # /incidents/{id}/snooze
+      # @param incident_id [String] Incident ID
+      # @param from_email_address [String] The email address of the user making the request.
+      # @param duration [Integer] The number of seconds to snooze the incident for. After this number of seconds has elapsed, the incident will return to the "triggered" state.
+      # @param options [Sawyer::Resource] A customizable set of options
+      # 
+      # @return [Sawyer::Resource] A hash representing the incident
+      def snooze_incident(incident_id, from_email_address, duration, options = {})
+        query_params = Hash.new
+        query_params[:duration] = duration
+
+        if from_email_address
+          options[:headers] ||= {}
+          options[:headers][:from] = from_email_address
+        end
+
+        response = post "/incidents/#{incident_id}/snooze", options.merge({query: query_params})
+        response[:incident]
+      end  
+
+      # Merge a list of source incidents into this incident.
+      # /incidents/{id}/merge
+      # @param incident_id [String] Destination incident
+      # @param from_email_address [String] The email address of the user making the request.
+      # @param source_incidents [Array<String>] List of incident ids to merge into destination
+      # @param options [Sawyer::Resource] A customizable set of options
+      # 
+      # @return [Sawyer::Resource] A hash representing the incident
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/put_incidents_id_merge
+      def merge_incidents(incident_id, from_email_address, source_incidents, options = {})
+        options[:source_incidents] = source_incidents.map { |incident_id| 
+          { 
+            id: incident_id, 
+            type: "incident_reference" 
+          } 
+        }
+
+        if from_email_address
+          options[:headers] ||= {}
+          options[:headers][:from] = from_email_address
+        end
+
+        response = put "/incidents/#{incident_id}/merge", options
+        response[:incident]
+      end
+
+      # Acknowledge, resolve, escalate or reassign one or more incidents.
+      # /incidents
+      # @param from_email_address [String] The email address of the user making the request.
+      # @param incidents [Array<String>] List of incidents to update
+      # @param options [Sawyer::Resource] A customizable set of options
+      # 
+      # @return [Array<Sawyer::Resource>] An array of hashes representing incidents
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/put_incidents
+      def update_incidents(from_email_address, incidents, options = {})
+        options[:incidents] = incidents.map { |incident|
+          item = { id: incident[:id], type: "incident_reference" }
+          item[:status] = incident[:status] if incident[:status]
+          item[:resolution] = incident[:resolution] if incident[:resolution]
+          item[:title] = incident[:title] if incident[:title]
+          item[:escalation_level] = incident[:escalation_level] if incident[:escalation_level]
+          item[:assignments] = incident[:assignments] if incident[:assignments]
+          item[:escalation_policy] = incident[:escalation_policy] if incident[:escalation_policy]
+          item
+        }
+
+        if from_email_address
+          options[:headers] ||= {}
+          options[:headers][:from] = from_email_address
+        end 
+
+        response = put "/incidents", options
+        response[:incidents]               
+      end
+
+      # # Create a new note for the specified incident.
+      # # /incidents/{id}/notes
+      # def post_incidents_notes(id)
+      # end    
 
       # # Create an incident synchronously without a corresponding event from a monitoring service.
       # # /incidents
       # def post_incidents()
       # end
 
-      # # Merge a list of source incidents into this incident.
-      # # /incidents/{id}/merge
-      # def merge_incidents()
-      # end
-
-
-
-      # # Acknowledge, resolve, escalate or reassign an incident.
-      # # /incidents/{id}
-      # def put_incident(id)
-      # end
-
-
-
       # # Resolve multiple alerts or associate them with different incidents.
       # # /incidents/{id}/alerts
       # def update_alerts()
       # end
-
-
 
       # # Resolve an alert or associate an alert with a new parent incident.
       # # /incidents/{id}/alerts/{alert_id}/
@@ -163,16 +223,6 @@ module PagerDuty
       # end
 
 
-
-      # # Create a new note for the specified incident.
-      # # /incidents/{id}/notes
-      # def post_incidents_notes(id)
-      # end
-
-      # # Snooze an incident.
-      # # /incidents/{id}/snooze
-      # def snooze_incidents(id)
-      # end      
     end
   end
 end

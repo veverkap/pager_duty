@@ -273,6 +273,45 @@ module PagerDuty
           assert_equal 0, notes.count
         end
       end          
-    end            
+    end   
+
+    describe "/snooze_incident POST" do
+      it "snoozes an incident that hasn't been acknowledged" do
+        VCR.use_cassette("incidents/snooze_incident/PD9WJA8") do
+          assert_raises(PagerDuty::BadRequest) do
+            response = @client.snooze_incident("PD9WJA8", "pagerduty@veverka.net", 3600)
+          end
+        end        
+      end
+
+      it "snoozes an incident that hasn't been acknowledged" do
+        VCR.use_cassette("incidents/snooze_incident/PD9WJA8.acknowledged") do
+          response = @client.snooze_incident("PD9WJA8", "pagerduty@veverka.net", 3600)
+        end        
+      end
+    end  
+
+    describe "/merge_incidents PUT" do
+      it "merges together two incicents" do
+        VCR.use_cassette("incidents/merge_incidents/PD9WJA8.PZMITGO") do
+          response = @client.merge_incidents("PD9WJA8", "pagerduty@veverka.net", ["PZMITGO"])
+        end        
+      end
+    end 
+
+    describe "/incidents PUT" do
+      it "updates an incident" do
+        VCR.use_cassette("incidents/update_incidents/PD9WJA8") do
+          incidents = [
+            {
+              id: "PD9WJA8",
+              type: "incident_reference",
+              status: "resolved"
+            }
+          ]
+          response = @client.update_incidents("pagerduty@veverka.net", incidents)
+        end        
+      end
+    end             
   end
 end

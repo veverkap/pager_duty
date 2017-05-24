@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.pagerduty.com/incidents
+    body:
+      encoding: UTF-8
+      string: '{"incidents":[{"id":"PD9WJA8","type":"incident_reference","status":"resolved"}]}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="FAKETOKEN"
+      From:
+      - pagerduty@veverka.net
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 24 May 2017 02:42:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"db2637a1fe0e44fd408d98797a93de34"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 07262316cbb13424c081afd7b1e358a0
+    body:
+      encoding: ASCII-8BIT
+      string: '{"incidents":[{"type":"incident","id":"PD9WJA8","incident_number":19,"title":"Snooze
+        Me","description":"Snooze Me","created_at":"2017-05-24T02:03:43Z","status":"resolved","pending_actions":[],"incident_key":"c4cda4e2e7b4425986622b1cec07a288","service":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"assignments":[],"acknowledgements":[],"last_status_change_at":"2017-05-24T02:42:06Z","last_status_change_by":{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"},"first_trigger_log_entry":{"id":"ROLCR3AAIXJ6ZGDT3ZEKTARL7A","type":"trigger_log_entry_reference","summary":"Triggered
+        through the website","self":"https://api.pagerduty.com/log_entries/ROLCR3AAIXJ6ZGDT3ZEKTARL7A","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PD9WJA8/log_entries/ROLCR3AAIXJ6ZGDT3ZEKTARL7A"},"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy_reference","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5"},"privilege":null,"teams":[{"id":"P1HE60B","type":"team_reference","summary":"Ops","self":"https://api.pagerduty.com/teams/P1HE60B","html_url":"https://push-comedy-theater.pagerduty.com/teams/P1HE60B"}],"alert_counts":{"all":0,"triggered":0,"resolved":0},"impacted_services":[{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"is_mergeable":true,"importance":null,"resolve_reason":null,"incidents_responders":[],"responder_requests":[],"subscriber_requests":[],"urgency":"high","summary":"[#19]
+        Snooze Me","self":"https://api.pagerduty.com/incidents/PD9WJA8","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PD9WJA8"}]}'
+    http_version: 
+  recorded_at: Wed, 24 May 2017 02:42:06 GMT
+recorded_with: VCR 3.0.3
