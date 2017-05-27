@@ -322,7 +322,7 @@ module PagerDuty
               content: "THIS IS CONTENT"
             }
           }
-          response = @client.create_incident_notes("PDP31UM", "pagerduty@veverka.net", options)
+          response = @client.create_incident_note("PDP31UM", "pagerduty@veverka.net", options)
           assert_equal "THIS IS CONTENT", response[:content]
         end
       end

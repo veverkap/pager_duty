@@ -78,41 +78,17 @@ module PagerDuty
     end   
 
     describe "/addons POST" do
-      it "will not create an addon without a type" do
-        VCR.use_cassette("addons/create.no_type") do
-          assert_raises(PagerDuty::BadRequest) do
-            @client.install_addon()
-          end
-        end
-      end
-
-      it "will not create an addon without a name" do
-        VCR.use_cassette("addons/create.no_name") do
-          assert_raises(PagerDuty::BadRequest) do
-            @client.install_addon(type: "full_page_addon")
-          end
-        end
-      end  
-
-      it "will not create an addon without a src" do
-        VCR.use_cassette("addons/create.no_src") do
-          assert_raises(PagerDuty::BadRequest) do
-            @client.install_addon(type: "full_page_addon", name: "Test")
-          end
-        end
-      end  
-
       it "will not create an addon without an HTTPS src" do
         VCR.use_cassette("addons/create.no_https_src") do
           assert_raises(PagerDuty::BadRequest) do
-            @client.install_addon(type: "full_page_addon", name: "Test", src: "http://www.example.com")
+            @client.install_addon("full_page_addon", "Test", "http://www.example.com")
           end
         end
       end  
 
       it "will create an addon with everything" do
         VCR.use_cassette("addons/create.all_set") do
-          response = @client.install_addon(type: :full_page_addon, name: "Test", src: "https://www.example.com")
+          response = @client.install_addon(:full_page_addon, "Test", "https://www.example.com")
           assert_equal "full_page_addon", response[:type]
           assert_equal "Test", response[:name]
           assert_equal "https://www.example.com", response[:src]
