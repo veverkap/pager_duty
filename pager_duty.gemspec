@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sawyer', '>= 0.5.3', '~> 0.8.0'
 
   spec.add_development_dependency "faraday-detailed_logger"
+  spec.add_development_dependency "coveralls"
   spec.add_development_dependency "ruby-swagger"
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
