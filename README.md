@@ -1,6 +1,6 @@
 # PagerDuty
 
-[![Build Status](https://travis-ci.org/veverkap/pager_duty.svg?branch=master)](https://travis-ci.org/veverkap/pager_duty) [![codebeat badge](https://codebeat.co/badges/da87a6f5-34c2-445f-8cc6-62343c5e6acc)](https://codebeat.co/projects/github-com-veverkap-pager_duty-master) [![Gem Version](https://badge.fury.io/rb/pager_duty.svg)](https://badge.fury.io/rb/pager_duty)
+[![Build Status](https://travis-ci.org/veverkap/pager_duty.svg?branch=master)](https://travis-ci.org/veverkap/pager_duty) [![codebeat badge](https://codebeat.co/badges/da87a6f5-34c2-445f-8cc6-62343c5e6acc)](https://codebeat.co/projects/github-com-veverkap-pager_duty-master) [![Gem Version](https://badge.fury.io/rb/pager_duty.svg)](https://badge.fury.io/rb/pager_duty) [![Coverage Status](https://coveralls.io/repos/github/veverkap/pager_duty/badge.svg?branch=master)](https://coveralls.io/github/veverkap/pager_duty?branch=master)
 
 Ruby client for v2 of the [PagerDuty API](https://v2.developer.pagerduty.com/v2/page/api-reference)
 
