@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/maintenance_windows/PQA2SWT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 27 May 2017 15:36:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"4c74a58d50867bb1b604cae5db7fe33b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dbf626f995603922465baaa80509faf5
+    body:
+      encoding: ASCII-8BIT
+      string: '{"maintenance_window":{"id":"PQA2SWT","type":"maintenance_window","summary":"Generic
+        MaintenanceWindow","self":"https://api.pagerduty.com/maintenance_windows/PQA2SWT","html_url":"https://push-comedy-theater.pagerduty.com/maintenance_windows#/show/PQA2SWT","sequence_number":2,"start_time":"2017-05-27T12:17:00-04:00","end_time":"2017-05-27T12:19:00-04:00","description":"Generic
+        MaintenanceWindow","services":[{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"}],"created_by":{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"},"teams":[{"id":"P1HE60B","type":"team_reference","summary":"Ops","self":"https://api.pagerduty.com/teams/P1HE60B","html_url":"https://push-comedy-theater.pagerduty.com/teams/P1HE60B"}]}}'
+    http_version: 
+  recorded_at: Sat, 27 May 2017 15:36:06 GMT
+- request:
+    method: delete
+    uri: https://api.pagerduty.com/maintenance_windows/PQA2SWT
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 27 May 2017 15:36:07 GMT
+      Connection:
+      - keep-alive
+      Status:
+      - 204 No Content
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 1d4851852493bfe4916597f587cbc980
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 27 May 2017 15:36:07 GMT
+- request:
+    method: get
+    uri: https://api.pagerduty.com/maintenance_windows/PQA2SWT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 27 May 2017 15:36:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 404 Not Found
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, From
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f44dec295576252f73562400223c611b
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"message":"Maintenance Window Not Found","code":5001}}'
+    http_version: 
+  recorded_at: Sat, 27 May 2017 15:36:07 GMT
+recorded_with: VCR 3.0.3

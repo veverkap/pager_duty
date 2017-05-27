@@ -5,6 +5,7 @@ require "pager_duty/client/addons"
 require "pager_duty/client/escalation_policies"
 require "pager_duty/client/incidents"
 require "pager_duty/client/log_entries"
+require "pager_duty/client/maintenance_windows"
 
 module PagerDuty
   class Client
@@ -15,6 +16,7 @@ module PagerDuty
     include PagerDuty::Client::EscalationPolicies
     include PagerDuty::Client::Incidents
     include PagerDuty::Client::LogEntries
+    include PagerDuty::Client::MaintenanceWindows
 
     def initialize(options = {})
       # Use options passed in, but fall back to module defaults
