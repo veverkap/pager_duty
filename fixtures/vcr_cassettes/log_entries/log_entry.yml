@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/log_entries/R3S5ZGDVULY5D2QJ50QBJXAHS4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 27 May 2017 01:05:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"822d46ae75dcb0c3f570abf54f37460e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9a6a0ca2792582ab948ed369c334dc5c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"log_entry":{"id":"R3S5ZGDVULY5D2QJ50QBJXAHS4","type":"annotate_log_entry","summary":"Note
+        added by John Jones","self":"https://api.pagerduty.com/log_entries/R3S5ZGDVULY5D2QJ50QBJXAHS4","html_url":null,"created_at":"2017-05-26T23:40:59Z","agent":{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"},"channel":{"type":"note","summary":"THIS
+        IS CONTENT"},"service":{"id":"P407C9R","type":"service_reference","summary":"test
+        service","self":"https://api.pagerduty.com/services/P407C9R","html_url":"https://push-comedy-theater.pagerduty.com/services/P407C9R"},"incident":{"id":"PDP31UM","type":"incident_reference","summary":"[#21]
+        Merge It","self":"https://api.pagerduty.com/incidents/PDP31UM","html_url":"https://push-comedy-theater.pagerduty.com/incidents/PDP31UM"},"teams":[{"id":"P1HE60B","type":"team_reference","summary":"Ops","self":"https://api.pagerduty.com/teams/P1HE60B","html_url":"https://push-comedy-theater.pagerduty.com/teams/P1HE60B"}],"contexts":[]}}'
+    http_version: 
+  recorded_at: Sat, 27 May 2017 01:05:39 GMT
+recorded_with: VCR 3.0.3

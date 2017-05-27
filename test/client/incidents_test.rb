@@ -312,6 +312,20 @@ module PagerDuty
           response = @client.update_incidents("pagerduty@veverka.net", incidents)
         end        
       end
-    end             
+    end  
+
+    describe "/incidents/{id}/notes POST" do
+      it "posts a new note" do
+        VCR.use_cassette("incidents/create_incident_notes/PDP31UM") do
+          options = {
+            note: {
+              content: "THIS IS CONTENT"
+            }
+          }
+          response = @client.create_incident_notes("PDP31UM", "pagerduty@veverka.net", options)
+          assert_equal "THIS IS CONTENT", response[:content]
+        end
+      end
+    end           
   end
 end

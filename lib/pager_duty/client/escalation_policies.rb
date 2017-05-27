@@ -4,12 +4,12 @@ module PagerDuty
     # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Escalation_Policies
     module EscalationPolicies
       # List escalation policies  
-      # @param options [Sawyer::Resource] A customizable set of options.
-      # @option options [String] :query Filters the results, showing only the escalation policies whose names contain the query.
+      # @param  options [Sawyer::Resource] A customizable set of options.
+      # @option options [String]        :query Filters the results, showing only the escalation policies whose names contain the query.
       # @option options [Array<string>] :user_ids Filters the results, showing only escalation policies on which any of the users is a target.
       # @option options [Array<string>] :team_ids An array of team IDs. Only results related to these teams will be returned. Account must have the teams ability to use this parameter.
       # @option options [Array<string>] :include Array of additional details to include (One or more of <tt>:services</tt>, <tt>:teams</tt>, <tt>:targets</tt>)
-      # @option options [String] :sort_by ("name") Sort the list by '<tt>name</tt>', '<tt>name:asc</tt>' or '<tt>name:desc</tt>'
+      # @option options [String]        :sort_by ("name") Sort the list by '<tt>name</tt>', '<tt>name:asc</tt>' or '<tt>name:desc</tt>'
       # 
       # @return [Array<Sawyer::Resource>] An array of hashes representing escalation policies
       # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Escalation_Policies/get_escalation_policies

@@ -1,8 +1,8 @@
 require "time"
 module PagerDuty
   class Client
-    # Module encompassing interactions with the escalation policies API endpoint
-    # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Escalation_Policies
+    # Module encompassing interactions with the incidents API endpoint
+    # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents
     module Incidents
       # List incidents
       # @param options [Sawyer::Resource] A customizable set of options.
@@ -202,10 +202,23 @@ module PagerDuty
         response[:incidents]               
       end
 
-      # # Create a new note for the specified incident.
-      # # /incidents/{id}/notes
-      # def post_incidents_notes(id)
-      # end    
+      # Create a new note for the specified incident.
+      # /incidents/{id}/notes
+      # @param incident_id [String] Incident ID
+      # @param from_email_address [String] The email address of the user making the request.
+      # @param options [Sawyer::Resource] A customizable set of options
+      # 
+      # @return [Sawyer::Resource] A hash representing a note for the incident
+      # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Incidents/post_incidents_id_notes
+      def create_incident_note(incident_id, from_email_address, options = {})
+        if from_email_address
+          options[:headers] ||= {}
+          options[:headers][:from] = from_email_address
+        end 
+
+        response = post "/incidents/#{incident_id}/notes", options
+        response[:note]
+      end    
 
       # # Create an incident synchronously without a corresponding event from a monitoring service.
       # # /incidents
@@ -221,8 +234,6 @@ module PagerDuty
       # # /incidents/{id}/alerts/{alert_id}/
       # def put_incidents(id, alert_id)
       # end
-
-
     end
   end
 end
