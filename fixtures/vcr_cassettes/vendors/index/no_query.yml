@@ -1,0 +1,181 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/vendors
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 28 May 2017 23:45:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      Cache-Control:
+      - max-age=3600, public
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"3ee47aa7418cd970309ee620501327fd"
+      X-Request-Id:
+      - e7e92d5cc0e14bbef8fc8fbb60fdbed8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"vendors":[{"id":"PZQ6AUS","type":"vendor","summary":"Amazon Cloudwatch","self":"https://api.pagerduty.com/vendors/PZQ6AUS","html_url":null,"name":"Amazon
+        Cloudwatch","website_url":"https://aws.amazon.com/cloudwatch","long_name":"Amazon
+        Cloudwatch AWS CloudSearch DynamoDB EBS EC2 ECS ElastiCac","logo_url":"https://s3.amazonaws.com/pdpartner/cloudwatch_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/cloudwatch_thumb.png","description":"Amazon
+        Web Services CloudWatch provides monitoring for AWS cloud resources and customer-run
+        applications. \r\n\r\nThis integration supports alarms from CloudSearch, DynamoDB,
+        EBS, EC2, ECS, ElastiCache, ELB, ES, Kinesis, Lambda, ML, Redshift, RDS, Route53,
+        SNS, SQS, S3, SWF, StorageGateway","integration_guide_url":"http://www.pagerduty.com/docs/guides/aws-cloudwatch-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PAM4FGS","type":"vendor","summary":"Datadog","self":"https://api.pagerduty.com/vendors/PAM4FGS","html_url":null,"name":"Datadog","website_url":"http://www.datadoghq.com/","long_name":"Datadog","logo_url":"https://s3.amazonaws.com/pdpartner/datadog_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/datadog_thumb.png","description":"Datadog
+        is a service for IT, Operations and Development teams who write and run applications
+        at scale, and want to turn the massive amounts of data produced by their apps,
+        tools and services into actionable insight.","integration_guide_url":"http://www.pagerduty.com/docs/guides/datadog-integration-guide/","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"P9Z800A","type":"vendor","summary":"JIRA
+        Software","self":"https://api.pagerduty.com/vendors/P9Z800A","html_url":null,"name":"JIRA
+        Software","website_url":"https://www.atlassian.com/software/jira","long_name":"Atlassian
+        JIRA Software via Webhook","logo_url":"https://s3.amazonaws.com/pdpartner/jira_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/jira_thumb.png","description":"This
+        integration triggers and resolve incidents in PagerDuty from JIRA Software
+        incidents using webhooks. Incident descriptions are configurable.\r\n\r\nNote:
+        This integration option supports JIRA Software webhooks only. For JIRA Service
+        Desk, use the JIRA Email integration option.","integration_guide_url":"https://www.pagerduty.com/docs/guides/jira-webhook-email-integration-guide","connectable":false,"generic_service_type":"api","alert_creation_default":"create_incidents","alert_creation_editable":false,"is_pd_cef":false},{"id":"P5ZAJ2D","type":"vendor","summary":"Nagios","self":"https://api.pagerduty.com/vendors/P5ZAJ2D","html_url":null,"name":"Nagios","website_url":"http://www.nagios.org/","long_name":"Nagios","logo_url":"https://s3.amazonaws.com/pdpartner/Nagios_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/Nagios_thumb.png","description":"Nagios
+        is one of the leading providers of open source and enterprise-grade IT infrastructure
+        monitoring tools. Used by hundreds of thousands of users worldwide, Nagios
+        allows it\u00e2\u0080\u0099s users to monitor their entire IT infrastructure,
+        spot problems before they occur, detect security breaches and plan/budget
+        for IT upgrades.","integration_guide_url":"http://www.pagerduty.com/docs/guides/nagios-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PQFCJER","type":"vendor","summary":"New
+        Relic","self":"https://api.pagerduty.com/vendors/PQFCJER","html_url":null,"name":"New
+        Relic","website_url":"http://newrelic.com/","long_name":"New Relic newrelic","logo_url":"https://s3.amazonaws.com/pdpartner/NewRelic_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/NewRelic_thumb.png","description":"New
+        Relic is the all-in-one web application performance tool that lets you see
+        performance from the end user experience down to the line of application code.
+        Its SaaS solution, which combines real user monitoring, application monitoring,
+        and availability monitoring in a single solution built from the ground up,
+        changes the way developers and operations teams manage web application performance
+        in real-time.","integration_guide_url":"http://www.pagerduty.com/docs/guides/new-relic-integration-guide/","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PXU524D","type":"vendor","summary":"Pingdom
+        BeepManager","self":"https://api.pagerduty.com/vendors/PXU524D","html_url":null,"name":"Pingdom
+        BeepManager","website_url":"http://www.pingdom.com/","long_name":"Pingdom
+        BeepManager","logo_url":"https://s3.amazonaws.com/pdpartner/pingdom_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/pingdom_thumb.png","description":"Pingdom
+        is a simple and convenient tool to monitor the uptime of your website and
+        other infrastructure.  This integration will trigger an incident when Pingdom
+        BeepManger detects that a check is down.\r\n\r\nTrigger an incident in PagerDuty
+        by sending Pingdom webhooks to the integration URL. ","integration_guide_url":"https://www.pagerduty.com/docs/guides/pingdom-beepmanager-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PRC098W","type":"vendor","summary":"ServiceNow
+        (v3.2.1)","self":"https://api.pagerduty.com/vendors/PRC098W","html_url":null,"name":"ServiceNow
+        (v3.2.1)","website_url":"http://www.servicenow.com/","long_name":"ServiceNow
+        (v3.2.1)","logo_url":"https://s3.amazonaws.com/pdpartner/servicenow.png","thumbnail_url":"","description":"Note:
+        this integration is only required when installing v3.2.1 of the PagerDuty
+        Integration. If you are installing v3.5.0, you do not need to add this inbound
+        integration.\r\n\r\nTo install this integration, we recommend starting from
+        the [ServiceNow Store](https://store.servicenow.com/$appstore.do#!/store/application/39a9d9664f834e00dd657bb28110c77b).\r\n\r\n*
+        Fuji, Geneva & Helsinki are supported by the app. We have a different integration
+        available for [Eureka and older](https://www.pagerduty.com/docs/guides/servicenow-integration-guide-old/).\r\n*
+        Ability to ingest incidents of all severities, apply classification, and include
+        remediation information directly in the alert\r\n* Full visibility into incident
+        status, plus metrics for system and team performance \r\n* Bi-directional
+        sync of incident updates and work notes","integration_guide_url":"https://www.pagerduty.com/docs/guides/servicenow-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_incidents","alert_creation_editable":false,"is_pd_cef":false},{"id":"PCJ0EFQ","type":"vendor","summary":"Custom
+        Event Transformer","self":"https://api.pagerduty.com/vendors/PCJ0EFQ","html_url":null,"name":"Custom
+        Event Transformer","website_url":"https://v2.developer.pagerduty.com/v2/docs/creating-an-integration-inline","long_name":"Universal
+        Transform","logo_url":"https://s3.amazonaws.com/pdpartner/universal_transform.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/universal_transform_thumb.png","description":"Custom
+        Event Transformers allow you to process any HTTP or HTTPS request into a PagerDuty
+        event live inside.  We host your code on multiple redundant datacenters.\r\n\r\n[Our
+        documentation](https://v2.developer.pagerduty.com/docs/creating-an-integration-inline)
+        contains examples including:\r\n\r\n* Absorbing [SMS](https://v2.developer.pagerduty.com/v2/docs/creating-an-integration-inline#sms)
+        from Twilio''s API\r\n* Creating incidents from [Github issues](https://v2.developer.pagerduty.com/v2/docs/creating-an-integration-inline#github)\r\n*
+        [Custom chat integrations](https://www.pagerduty.com/blog/targeted-collaboration-scale-coordinated-response-manager/)\r\n*
+        Creating incidents from [Visual Studio Team Foundation Server](https://v2.developer.pagerduty.com/v2/docs/creating-an-integration-inline#vstfs)","integration_guide_url":"https://v2.developer.pagerduty.com/v2/docs/creating-an-integration-inline","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PT6OIQO","type":"vendor","summary":"Microsoft
+        Azure","self":"https://api.pagerduty.com/vendors/PT6OIQO","html_url":null,"name":"Microsoft
+        Azure","website_url":"https://azure.microsoft.com/","long_name":"Microsoft
+        Azure Alerts","logo_url":"https://s3.amazonaws.com/pdpartner/MicrosoftAzure.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/MicrosoftAzure.png","description":"Integrate
+        your Microsoft Azure Alerts with PagerDuty. Configure alerts based on monitoring
+        metrics for your Azure services. Azure allows you to route your alert notifications
+        via webhooks to external notification channels.","integration_guide_url":"https://www.pagerduty.com/docs/guides/azure-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PF8FPF1","type":"vendor","summary":"Sensu","self":"https://api.pagerduty.com/vendors/PF8FPF1","html_url":null,"name":"Sensu","website_url":"http://sensuapp.org/","long_name":"Sensu","logo_url":"https://s3.amazonaws.com/pdpartner/sensu_logo.png","thumbnail_url":"","description":"Sensu
+        is an open source monitoring framework that aims to be simple, malleable,
+        and scalable.","integration_guide_url":"https://www.pagerduty.com/docs/guides/sensu-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PZ1KXAK","type":"vendor","summary":"Splunk","self":"https://api.pagerduty.com/vendors/PZ1KXAK","html_url":null,"name":"Splunk","website_url":"http://www.splunk.com/","long_name":"Splunk","logo_url":"https://s3.amazonaws.com/pdpartner/splunk_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/splunk_thumb.png","description":"Splunk
+        collects and indexes data from just about any source imaginable, such as network
+        traffic, Web servers, custom applications, application servers, hypervisors,
+        GPS systems, stock market feeds, social media, and preexisting structured
+        databases.\r\n\r\nThis integration can accept Splunk webhooks.\r\n\r\n[Splunk
+        Webhooks Integration guide](https://www.pagerduty.com/docs/guides/splunk-beta-integration-guide/)","integration_guide_url":"https://www.pagerduty.com/docs/guides/splunk-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PJOGQ4Q","type":"vendor","summary":"Zabbix","self":"https://api.pagerduty.com/vendors/PJOGQ4Q","html_url":null,"name":"Zabbix","website_url":"http://www.zabbix.com/","long_name":"Zabbix","logo_url":"https://s3.amazonaws.com/pdpartner/zabbix_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/zabbix_thumb.png","description":"Zabbix
+        is a very powerful open source enterprise-class network management system
+        designed to monitor the status of network services, servers and other hardware.
+        It\u00e2\u0080\u0099s playing an important role in monitoring IT infrastructure
+        for many organizations.","integration_guide_url":"http://www.pagerduty.com/docs/guides/zabbix-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PNYM8J7","type":"vendor","summary":"Zendesk","self":"https://api.pagerduty.com/vendors/PNYM8J7","html_url":null,"name":"Zendesk","website_url":"http://www.zendesk.com/","long_name":"Zendesk","logo_url":"https://s3.amazonaws.com/pdpartner/zendesk_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/zendesk_thumb.png","description":"Zendesk
+        is a popular web-based ticketing system. ","integration_guide_url":"http://www.pagerduty.com/docs/guides/zendesk-integration-guide/","connectable":false,"generic_service_type":"email","alert_creation_default":"create_incidents","alert_creation_editable":false,"is_pd_cef":false},{"id":"PHSEEEB","type":"vendor","summary":"HipChat
+        to PagerDuty","self":"https://api.pagerduty.com/vendors/PHSEEEB","html_url":null,"name":"HipChat
+        to PagerDuty","website_url":"https://www.hipchat.com/","long_name":"HipChat
+        to PagerDuty","logo_url":"","thumbnail_url":"","description":"Trigger an incident
+        in PagerDuty by sending HipChat webhooks to the integration URL. \r\n","integration_guide_url":"https://www.pagerduty.com/docs/guides/hipchat-to-pagerduty-integration-guide","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PRYWPH4","type":"vendor","summary":"Slack
+        to PagerDuty","self":"https://api.pagerduty.com/vendors/PRYWPH4","html_url":null,"name":"Slack
+        to PagerDuty","website_url":"https://slack.com/","long_name":"Slack to PagerDuty","logo_url":"https://euri.ca/files/slack.png","thumbnail_url":"https://euri.ca/files/slack.png","description":"Trigger
+        an incident in PagerDuty from the Slack command line by typing \"/pd incident\"","integration_guide_url":"https://www.pagerduty.com/docs/guides/slack-beta-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PRLFT2B","type":"vendor","summary":"AdmanTIC","self":"https://api.pagerduty.com/vendors/PRLFT2B","html_url":null,"name":"AdmanTIC","website_url":"https://www.admantic.fr/","long_name":"AdmanTIC","logo_url":"","thumbnail_url":"","description":"Hosting
+        infrastructure automation for customers'' infrastructures\r\n","integration_guide_url":"","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"P4K037I","type":"vendor","summary":"Airbrake","self":"https://api.pagerduty.com/vendors/P4K037I","html_url":null,"name":"Airbrake","website_url":"https://airbrake.io/","long_name":"Airbrake.io
+        (Exceptional)","logo_url":"","thumbnail_url":"","description":"Airbrake notifies
+        on error with stack traces for multiple languages including Ruby, iOS, Javascript,
+        PHP, .Net, Java, Python, Perl, Merb, and Erlang.","integration_guide_url":"","connectable":false,"generic_service_type":"email","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PHKAR7T","type":"vendor","summary":"AlertBot","self":"https://api.pagerduty.com/vendors/PHKAR7T","html_url":null,"name":"AlertBot","website_url":"http://www.alertbot.com/","long_name":"AlertBot","logo_url":"https://d41r4qcowzuh5.cloudfront.net/logo/r/9419-1319741432.jpg","thumbnail_url":"https://pbs.twimg.com/profile_images/1206817822/Pyramid-only_bigger.jpg","description":"AlertBot
+        allows businesses to continuously monitor the availability and performance
+        of their public Internet services from around the country and around the world.","integration_guide_url":"http://www.pagerduty.com/docs/guides/email-integration-guide/","connectable":false,"generic_service_type":"email","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PZ48H9W","type":"vendor","summary":"AlertFox","self":"https://api.pagerduty.com/vendors/PZ48H9W","html_url":null,"name":"AlertFox","website_url":"http://alertfox.com/","long_name":"","logo_url":"https://s3.amazonaws.com/pdpartner/alertfox_logo.png","thumbnail_url":"","description":"AlertFox
+        monitors the uptime and performance of a website and transactions. Includes
+        reports, such as a waterfall diagram to determine the root cause of a delay.","integration_guide_url":"","connectable":false,"generic_service_type":"email","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PJVSJDA","type":"vendor","summary":"AlertSite
+        UXM","self":"https://api.pagerduty.com/vendors/PJVSJDA","html_url":null,"name":"AlertSite
+        UXM","website_url":"http://smartbear.com/alertsiteUXM/","long_name":"SmartBear''s
+        AlertSite UXM","logo_url":"https://s3.amazonaws.com/pdpartner/alertsite_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/alertsite_thumb.png","description":"SmartBear\u2019s
+        AlertSite UXM provides performance and availability monitoring for  APIs,
+        mobile, web and SaaS applications. Real browser based recorder makes  monitoring
+        transactions as easy as clicking the mouse with no need to code.","integration_guide_url":"https://www.pagerduty.com/docs/guides/smartbears-alertsite-uxm-integration-guide/","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PNC4J42","type":"vendor","summary":"Apex
+        Ping","self":"https://api.pagerduty.com/vendors/PNC4J42","html_url":null,"name":"Apex
+        Ping","website_url":"https://apex.sh/ping/","long_name":"Apex Ping","logo_url":"https://s3.amazonaws.com/pdpartner/apexlarge.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/apexthumb.png","description":"Apex
+        Ping is an uptime and performance monitoring tool with rich reporting and
+        flexible alerting capabilities, aimed at being simple but effective.","integration_guide_url":"","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PXPGF42","type":"vendor","summary":"Apica","self":"https://api.pagerduty.com/vendors/PXPGF42","html_url":null,"name":"Apica","website_url":"http://www.apicasystem.com/","long_name":"Apica","logo_url":"https://s3.amazonaws.com/pdpartner/apica_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/apica_thumb.png","description":"Apica
+        provides the most advanced combination of global networks, SaaS tools and
+        professional experts available to optimize cloud and mobile application performance.
+        Apica\u00e2\u0080\u0099s easy-to-use, cloud-based load testing and web performance
+        monitoring platform allows organizations to determine capacity, address bottlenecks,
+        lower operating costs, and reduce project risk.","integration_guide_url":"http://www.pagerduty.com/docs/guides/apica-integration-guide/","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"P3H374T","type":"vendor","summary":"AppDynamics","self":"https://api.pagerduty.com/vendors/P3H374T","html_url":null,"name":"AppDynamics","website_url":"http://www.appdynamics.com/","long_name":"AppDynamics","logo_url":"https://s3.amazonaws.com/pdpartner/appdynamics_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/appdynamics_thumb.png","description":"At
+        AppDynamics, our Application Intelligence Platform empowers today\u2019s software-defined
+        businesses with the ability to proactively monitor, manage, and optimize the
+        most complex software environments. Because we start with user interactions,
+        our platform is able to dynamically collect millions of performance data points
+        across your applications and infrastructure. We then apply intelligence to
+        instantly identify performance anomalies, enable automatic fixes and continuously
+        measure business impact. And all this happens in real time, in production,
+        with cloud or on-premise deployment flexibility. So even in the most dynamic
+        production environments, you can know more and know it faster. It\u2019s more
+        than monitoring\u2014it\u2019s true Application Intelligence.","integration_guide_url":"http://www.pagerduty.com/docs/guides/appdynamics-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PWBOZ20","type":"vendor","summary":"AppFirst","self":"https://api.pagerduty.com/vendors/PWBOZ20","html_url":null,"name":"AppFirst","website_url":"http://www.appfirst.com","long_name":"AppFirst","logo_url":"https://s3.amazonaws.com/pdpartner/appfirst_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/appfirst_thumb.png","description":"AppFirst
+        continuously collects real-time metrics within every application, component,
+        and running process on every server, virtual machine, and cloud instance in
+        your environment.","integration_guide_url":"http://www.pagerduty.com/docs/guides/appfirst-integration-guide/","connectable":false,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false},{"id":"PUWP7US","type":"vendor","summary":"AppFormix","self":"https://api.pagerduty.com/vendors/PUWP7US","html_url":null,"name":"AppFormix","website_url":"http://www.appformix.com/","long_name":"AppFormix","logo_url":"https://s3.amazonaws.com/pdpartner/appformix_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/appformix_thumb.png","description":"AppFormix
+        is a real time monitoring and analytics tool which enables operators and developers
+        to know how all their resources are being consumed by VMs, Containers and
+        Applications throughout the entire data center - all in real time.","integration_guide_url":"","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false}],"limit":25,"offset":0,"total":null,"more":true}'
+    http_version: 
+  recorded_at: Sun, 28 May 2017 23:45:49 GMT
+recorded_with: VCR 3.0.3

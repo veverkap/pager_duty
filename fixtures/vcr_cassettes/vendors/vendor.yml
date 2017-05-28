@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/vendors/PXPGF42
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 28 May 2017 23:46:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"29c08a4faf3d7026d4ad9fb3443026c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dd0b1193edd9b8452be7a9ab4ab670cd
+    body:
+      encoding: ASCII-8BIT
+      string: '{"vendor":{"id":"PXPGF42","type":"vendor","summary":"Apica","self":"https://api.pagerduty.com/vendors/PXPGF42","html_url":null,"name":"Apica","website_url":"http://www.apicasystem.com/","long_name":"Apica","logo_url":"https://s3.amazonaws.com/pdpartner/apica_large.png","thumbnail_url":"https://s3.amazonaws.com/pdpartner/apica_thumb.png","description":"Apica
+        provides the most advanced combination of global networks, SaaS tools and
+        professional experts available to optimize cloud and mobile application performance.
+        Apica\u00e2\u0080\u0099s easy-to-use, cloud-based load testing and web performance
+        monitoring platform allows organizations to determine capacity, address bottlenecks,
+        lower operating costs, and reduce project risk.","integration_guide_url":"http://www.pagerduty.com/docs/guides/apica-integration-guide/","connectable":true,"generic_service_type":"api","alert_creation_default":"create_alerts_and_incidents","alert_creation_editable":true,"is_pd_cef":false}}'
+    http_version: 
+  recorded_at: Sun, 28 May 2017 23:46:39 GMT
+recorded_with: VCR 3.0.3

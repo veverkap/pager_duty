@@ -8,6 +8,7 @@ require "pager_duty/client/log_entries"
 require "pager_duty/client/maintenance_windows"
 require "pager_duty/client/notifications"
 require "pager_duty/client/on_calls"
+require "pager_duty/client/vendors"
 
 module PagerDuty
   class Client
@@ -21,6 +22,7 @@ module PagerDuty
     include PagerDuty::Client::MaintenanceWindows
     include PagerDuty::Client::Notifications
     include PagerDuty::Client::OnCalls
+    include PagerDuty::Client::Vendors
 
     def initialize(options = {})
       # Use options passed in, but fall back to module defaults

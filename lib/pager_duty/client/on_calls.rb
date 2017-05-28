@@ -43,7 +43,7 @@ module PagerDuty
         query_params[:time_zone]  = options[:time_zone] if options[:time_zone]
         query_params[:since]      = options[:since].utc.iso8601 if options[:since]
         query_params[:until]      = options[:until].utc.iso8601 if options[:until]
-        query_params[:earliest]   = options.fetch(:earliest, false)
+        query_params[:earliest]   = options.fetch(:earliest, false) if options[:earliest]
         
         query_params[:include]               = options[:include] if options[:include]
         query_params["user_ids[]"]              = user_ids.join(",") if user_ids.length > 0
