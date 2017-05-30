@@ -82,7 +82,6 @@ module PagerDuty
       end
     end   
    
-
     # describe "/schedules POST" do
     #   it "creates schedule" do
     #     VCR.use_cassette("schedules/post", record: :all) do

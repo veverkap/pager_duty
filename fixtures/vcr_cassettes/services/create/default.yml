@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagerduty.com/services
+    body:
+      encoding: UTF-8
+      string: '{"service":{"name":"TEST","description":"TEST","escalation_policy":{"id":"P1N7VS5","type":"escalation_policy"}}}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 20:00:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"43c9ce8cc0de88aa82d16485fac40621"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2e34f86a743b7083aac74df052a2a3dd
+    body:
+      encoding: UTF-8
+      string: '{"service":{"id":"PYSR41F","name":"TEST","description":"TEST","auto_resolve_timeout":14400,"acknowledgement_timeout":1800,"created_at":"2017-05-30T16:00:03-04:00","status":"active","last_incident_timestamp":null,"teams":[{"id":"P1HE60B","type":"team_reference","summary":"Ops","self":"https://api.pagerduty.com/teams/P1HE60B","html_url":"https://push-comedy-theater.pagerduty.com/teams/P1HE60B"}],"incident_urgency_rule":{"type":"constant","urgency":"high"},"scheduled_actions":[],"support_hours":null,"escalation_policy":{"id":"P1N7VS5","type":"escalation_policy_reference","summary":"Default
+        Changed","self":"https://api.pagerduty.com/escalation_policies/P1N7VS5","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P1N7VS5"},"addons":[],"privilege":null,"alert_creation":"create_incidents","integrations":[],"type":"service","summary":"TEST","self":"https://api.pagerduty.com/services/PYSR41F","html_url":"https://push-comedy-theater.pagerduty.com/services/PYSR41F"}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 20:00:04 GMT
+recorded_with: VCR 3.0.3

@@ -178,11 +178,8 @@ module PagerDuty
       # @see https://v2.developer.pagerduty.com/v2/page/api-reference#!/Schedules/post_schedules
       # @api private
       def create_schedule(options = {})
-        query_params = {
-          overflow: options.fetch(:overflow, false)
-        }
-
-        schedule = {
+        params = { query: { overflow: options.fetch(:overflow, false) }}
+        params[:schedule] = {
           name: options[:name],
           type: "schedule",
           time_zone: options.fetch(:time_zone, "UTC"),
@@ -190,10 +187,7 @@ module PagerDuty
           schedule_layers: options[:schedule_layers],
           restrictions: options[:restrictions]
         }
-
-
-        params = { schedule: schedule }
-        response = post "/schedules", options.merge({query: query_params, body: params})
+        response = post "/schedules", options.merge(params)
         response[:schedule]
       end 
 

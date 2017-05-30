@@ -61,9 +61,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"name":"Test item","time_zone":"America/New_York","description":"Test
-        item","schedule_layers":[{"start":"2017-05-30T18:52:24Z","end":"2017-06-09T18:52:24Z","rotation_virtual_start":"2017-05-30T18:52:24Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}],"body":{"schedule":{"name":"Test
+        item","schedule_layers":[{"start":"2017-05-30T19:03:00Z","end":"2017-06-09T19:03:00Z","rotation_virtual_start":"2017-05-30T19:03:00Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}],"schedule":{"name":"Test
         item","type":"schedule","time_zone":"America/New_York","description":"Test
-        item","schedule_layers":[{"start":"2017-05-30T18:52:24Z","end":"2017-06-09T18:52:24Z","rotation_virtual_start":"2017-05-30T18:52:24Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}]}}}'
+        item","schedule_layers":[{"start":"2017-05-30T19:03:00Z","end":"2017-06-09T19:03:00Z","rotation_virtual_start":"2017-05-30T19:03:00Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}]}}'
     headers:
       Accept:
       - application/vnd.pagerduty+json;version=2
@@ -83,7 +83,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 30 May 2017 18:52:25 GMT
+      - Tue, 30 May 2017 19:03:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -105,11 +105,11 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 9c6896a165be391a357ee4b7eb4cbd73
+      - 0376574a2c6e451d1e81e4687c31f482
     body:
       encoding: UTF-8
       string: '{"error":{"message":"Invalid Input Provided","code":2001,"errors":["User
         cannot be empty."]}}'
     http_version: 
-  recorded_at: Tue, 30 May 2017 18:52:25 GMT
+  recorded_at: Tue, 30 May 2017 19:03:01 GMT
 recorded_with: VCR 3.0.3
