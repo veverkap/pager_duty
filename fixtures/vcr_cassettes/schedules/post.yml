@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagerduty.com/schedules
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test item","time_zone":"America/New_York","description":"Test
+        item","schedule_layers":[{"start":"2017-05-30T17:59:39Z","end":"2017-06-09T17:59:39Z","rotation_virtual_start":"2017-05-30T17:59:39Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}],"overflow":false}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 17:59:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 400 Bad Request
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 1232ca0fdd938cae37cee5efa94ec1b5
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Invalid Input Provided","code":2001,"errors":["User
+        cannot be empty."]}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 17:59:39 GMT
+- request:
+    method: post
+    uri: https://api.pagerduty.com/schedules?overflow=false
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test item","time_zone":"America/New_York","description":"Test
+        item","schedule_layers":[{"start":"2017-05-30T18:52:24Z","end":"2017-06-09T18:52:24Z","rotation_virtual_start":"2017-05-30T18:52:24Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}],"body":{"schedule":{"name":"Test
+        item","type":"schedule","time_zone":"America/New_York","description":"Test
+        item","schedule_layers":[{"start":"2017-05-30T18:52:24Z","end":"2017-06-09T18:52:24Z","rotation_virtual_start":"2017-05-30T18:52:24Z","rotation_turn_length_seconds":86400,"users":[{"id":"PDU9IB6","type":"user"}]}],"restrictions":[{"type":"daily_restriction","start_time_of_day":"08:00:00","duration_seconds":32400}]}}}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 18:52:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 400 Bad Request
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 9c6896a165be391a357ee4b7eb4cbd73
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Invalid Input Provided","code":2001,"errors":["User
+        cannot be empty."]}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 18:52:25 GMT
+recorded_with: VCR 3.0.3

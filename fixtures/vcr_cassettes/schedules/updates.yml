@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.pagerduty.com/schedules/P99HSGO?overflow=false
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test item","schedule":{"name":"Test item","type":"schedule","time_zone":"UTC","description":null,"schedule_layers":null,"restrictions":null}}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 18:52:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 400 Bad Request
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6fd851c12672ce65e1c37071adfbdc6a
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Invalid Input Provided","code":2001,"errors":["Schedule
+        layers cannot be empty."]}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 18:52:25 GMT
+recorded_with: VCR 3.0.3

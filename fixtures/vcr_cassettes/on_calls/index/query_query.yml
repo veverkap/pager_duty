@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/schedules?query=New
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 14:12:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"fd24fcbc56c65464f51c7778ea9a539b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 75a5c9efeb15f59678ed7f52c328dd13
+    body:
+      encoding: ASCII-8BIT
+      string: '{"schedules":[{"id":"PQLNQ9T","type":"schedule","summary":"New Schedule
+        #1","self":"https://api.pagerduty.com/schedules/PQLNQ9T","html_url":"https://push-comedy-theater.pagerduty.com/schedules/PQLNQ9T","name":"New
+        Schedule #1","time_zone":"America/New_York","description":null,"escalation_policies":[{"id":"P9ZL21C","type":"escalation_policy_reference","summary":"Devs
+        Only","self":"https://api.pagerduty.com/escalation_policies/P9ZL21C","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/P9ZL21C"},{"id":"PY7I9YV","type":"escalation_policy_reference","summary":"TEST
+        CREATE","self":"https://api.pagerduty.com/escalation_policies/PY7I9YV","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/PY7I9YV"},{"id":"PT057MH","type":"escalation_policy_reference","summary":"Engineering
+        Escalation Policy","self":"https://api.pagerduty.com/escalation_policies/PT057MH","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/PT057MH"},{"id":"PP148UZ","type":"escalation_policy_reference","summary":"Generated
+        Policy","self":"https://api.pagerduty.com/escalation_policies/PP148UZ","html_url":"https://push-comedy-theater.pagerduty.com/escalation_policies/PP148UZ"}],"users":[{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"},{"id":"PW21NA6","type":"user_reference","summary":"Sofia
+        Veverka","self":"https://api.pagerduty.com/users/PW21NA6","html_url":"https://push-comedy-theater.pagerduty.com/users/PW21NA6"}],"privilege":null,"teams":[{"id":"P7XILUG","type":"team_reference","summary":"Devs","self":"https://api.pagerduty.com/teams/P7XILUG","html_url":"https://push-comedy-theater.pagerduty.com/teams/P7XILUG"}]}],"limit":25,"offset":0,"total":null,"more":false}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 14:12:36 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagerduty.com/schedules/P99HSGO/overrides
+    body:
+      encoding: UTF-8
+      string: '{"start":"2017-05-30T23:48:27Z","end":"2017-06-02T00:53:13Z","user_id":"PGJLPE9","override":{"start":"2017-05-30T23:48:27Z","end":"2017-06-02T00:53:13Z","user":{"id":"PGJLPE9","type":"user"}}}'
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 18:40:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"fc1b066a29a7b23f218419922bfdbec0"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b0ae4fd366615a3cf6fce4a64ce3edff
+    body:
+      encoding: UTF-8
+      string: '{"override":{"start":"2017-05-30T23:48:27Z","end":"2017-06-02T00:53:13Z","user":{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"},"id":"Q0KU8C9IYGLCQT"}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 18:40:45 GMT
+recorded_with: VCR 3.0.3

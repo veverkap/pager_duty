@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagerduty.com/schedules/P99HSGO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.pagerduty+json;version=2
+      User-Agent:
+      - PagerDuty Ruby Gem 0.1.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="iFBafMkV8noXmHd6jmsi"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 30 May 2017 14:17:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"5aae3514ae8638407e456ed515607758"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 907f0dfbc758bdd7a2990f491d42488d
+    body:
+      encoding: ASCII-8BIT
+      string: '{"schedule":{"id":"P99HSGO","type":"schedule","summary":"Loop","self":"https://api.pagerduty.com/schedules/P99HSGO","html_url":"https://push-comedy-theater.pagerduty.com/schedules/P99HSGO","name":"Loop","time_zone":"America/New_York","description":null,"escalation_policies":[],"users":[{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"},{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"},{"id":"PW21NA6","type":"user_reference","summary":"Sofia
+        Veverka","self":"https://api.pagerduty.com/users/PW21NA6","html_url":"https://push-comedy-theater.pagerduty.com/users/PW21NA6"},{"id":"PDU9IB6","type":"user_reference","summary":"Fake
+        User","self":"https://api.pagerduty.com/users/PDU9IB6","html_url":"https://push-comedy-theater.pagerduty.com/users/PDU9IB6"}],"privilege":null,"schedule_layers":[{"name":"Layer
+        1","rendered_schedule_entries":[],"rendered_coverage_percentage":null,"id":"PY4KMY5","start":"2017-05-30T10:14:05-04:00","end":null,"rotation_virtual_start":"2017-05-30T10:00:00-04:00","rotation_turn_length_seconds":604800,"users":[{"user":{"id":"PDU9IB6","type":"user_reference","summary":"Fake
+        User","self":"https://api.pagerduty.com/users/PDU9IB6","html_url":"https://push-comedy-theater.pagerduty.com/users/PDU9IB6"}},{"user":{"id":"PGJLPE9","type":"user_reference","summary":"John
+        Jones","self":"https://api.pagerduty.com/users/PGJLPE9","html_url":"https://push-comedy-theater.pagerduty.com/users/PGJLPE9"}},{"user":{"id":"PRTFS0C","type":"user_reference","summary":"Patrick
+        Veverka","self":"https://api.pagerduty.com/users/PRTFS0C","html_url":"https://push-comedy-theater.pagerduty.com/users/PRTFS0C"}},{"user":{"id":"PW21NA6","type":"user_reference","summary":"Sofia
+        Veverka","self":"https://api.pagerduty.com/users/PW21NA6","html_url":"https://push-comedy-theater.pagerduty.com/users/PW21NA6"}}],"restrictions":[]}],"overrides_subschedule":{"name":"Overrides","rendered_schedule_entries":[],"rendered_coverage_percentage":null},"final_schedule":{"name":"Final
+        Schedule","rendered_schedule_entries":[],"rendered_coverage_percentage":null},"teams":[]}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 14:17:51 GMT
+recorded_with: VCR 3.0.3
