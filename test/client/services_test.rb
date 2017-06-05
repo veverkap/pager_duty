@@ -53,8 +53,25 @@ module PagerDuty
       it "creates services for account" do
         VCR.use_cassette("services/create/default") do
           @client.create_service({
-            name: "TEST", 
+            name: "TEST THE THING", 
+            type: "schedule",
+            time_zone: "America/New_York",
             description: "TEST",
+            schedule_layers: [
+            {
+              start: "2017-05-30 17:28:25 UTC",
+              end: "2017-06-09 17:28:25 UTC",
+              rotation_virtual_start: "2017-05-30 17:28:25 UTC",
+              rotation_turn_length_seconds: 604800,
+              users: [
+                {
+                  user: {
+                    id: "PDU9IB6",
+                    type: "user"
+                  }
+                }
+              ]
+            }],
             escalation_policy: {
               id: "P1N7VS5",
               type: "escalation_policy"
